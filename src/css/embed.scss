@@ -1,4 +1,8 @@
 @import "fonts";
+@import "mq";
+
+$us:#ed1c24;
+$eu:#0071bc;
 
 html,
 body {
@@ -9,4 +13,169 @@ body {
 }
 
 .interactive-embed {
+
 }
+
+h2 {
+
+	@include fs-header(3);
+	margin:0;
+
+	@include mq(mobileLandscape) {
+		@include fs-header(4);
+	}
+}
+
+.rc-intro {
+	border-top: 1px solid #dfdfdf;
+	padding-top:8px;
+	position: relative;
+    @include fs-header(5);
+    font-weight: normal;
+    display: block;
+    width:100%;
+    background-color:#f6f6f6;
+
+    @include mq(mobileLandscape) {
+		@include fs-header(5);
+		font-size:28px;
+		font-weight: normal;
+	}
+
+}
+
+.rc-overall__teams, .rc-overall__result {
+	display: inline-block;
+	margin:0;
+	padding-bottom:20px;
+
+	p {
+		margin-top:2px;
+		margin-bottom: 6px;
+	}
+}
+
+.rc-overall__note {
+	@include fs-textSans(1);
+	@include mq(mobileLandscape) {
+		@include fs-textSans(3);
+	}
+}
+
+.rc-overall__teams {
+	width:38%;
+	font-weight:bold;
+}
+
+.rc-overall__teams--us {
+	text-align: right;
+	color: $us;
+}
+
+.rc-overall__teams--eu {
+	color: $eu;
+}
+
+.rc-overall__result {
+	width:20%;
+
+	p {
+		text-align: center;
+	}
+}
+
+.rc-matches {
+	margin:0;
+	padding:0;
+	background-color:#f6f6f6;
+}
+
+.rc-match {
+	list-style: none;
+	position: relative;
+    border-top: 1px dotted #dfdfdf;
+    @include fs-textSans(1);
+    display: block;
+    width:100%;
+    color: #767676;
+
+    @include mq(mobileLandscape) {
+		@include fs-textSans(3);
+	}
+}
+
+.rc-match__players, .rc-match__result {
+	display: inline-block;
+	margin:0;
+	vertical-align: top;
+
+	p {
+		margin-top:2px;
+		margin-bottom: 2px;
+	}
+}
+
+.rc-match__players {
+	width:38%;
+}
+
+.rc-match__result {
+	width:20%;
+
+	p {
+		text-align: center;
+	}
+}
+
+.rc-match__players--us {
+
+	text-align: right;
+
+}
+
+.rc-match__date {
+	@include fs-textSans(1);
+	color: #767676;
+	font-weight: bold;
+	margin: 0;
+	margin-left:5px;
+
+    @include mq(mobileLandscape) {
+		@include fs-textSans(3);
+	}
+}
+
+.winner {
+	font-weight: 500;
+	color:#000;
+}
+
+.rc-expand-button {
+	float:right;
+    background: none;
+    border-radius: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    @include fs-textSans(1);
+    color: #999;
+    outline: none;
+    cursor: pointer;
+    transition: 200ms color, 200ms border-color;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 9px center;
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left:32px;
+    padding-right:10px;
+    margin-top:8px;
+}
+
+.hidden {
+	background-image: url(assets/imgs/minus.svg);
+}
+
+.shown {
+	background-image: url(assets/imgs/plus.svg);
+}
+

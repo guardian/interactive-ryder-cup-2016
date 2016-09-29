@@ -1,1 +1,41 @@
-<div class="test-msg">Loading…</div>
+<h2>Ryder Cup results</h2>
+<div class="rc-intro">
+	{{#intro}}
+
+	<div class="rc-overall__teams"><p class="rc-overall__teams--us">US</p></div>
+	<div class="rc-overall__result"><p><span class="{{us_result}}">{{us}}</span> - <span class="{{eu_result}}">{{eu}}</span></p></div>
+	<div class="rc-overall__teams"><p class="rc-overall__teams--eu {{eu_result}}">Europe</p></div>
+
+	{{/intro}}
+</div>
+<ul class="rc-matches" id="rc-friday">
+	<p class="rc-match__date">Friday 30 Sep</p>
+	{{#friday}}
+	<li class="rc-match rc-match--finished">
+		<div class="rc-match__players"><p class="rc-match__players--us {{us_result}}">{{players_us}}</p></div>
+		<div class="rc-match__result"><p>{{result}}</p></div>
+		<div class="rc-match__players"><p class="rc-match__players--eu {{eu_result}}">{{players_eu}}</p></div>
+	</li>
+	{{/friday}}
+</ul>
+<ul class="rc-matches" id="rc-saturday">
+	<p class="rc-match__date">Saturday 1 Oct</p>
+	{{#saturday}}
+	<li class="rc-match rc-match--finished">
+		<div class="rc-match__players"><p class="rc-match__players--us {{us_result}}">{{players_us}}</p></div>
+		<div class="rc-match__result"><p>{{result}}</p></div>
+		<div class="rc-match__players"><p class="rc-match__players--eu {{eu_result}}">{{players_eu}}</p></div>
+	</li>
+	{{/saturday}}
+</ul>
+<ul class="rc-matches" id="rc-sunday">
+	<p class="rc-match__date">Sunday 2 Oct</p>
+	{{#sunday}}
+	<li class="rc-match rc-match--finished">
+		<div class="rc-match__players"><p class="rc-match__players--us {{us_result}}">{{players_us}}</p></div>
+		<div class="rc-match__result"><p>{{result}}</p></div>
+		<div class="rc-match__players"><p class="rc-match__players--eu {{eu_result}}">{{players_eu}}</p></div>
+	</li>
+	{{/sunday}}
+</ul>
+<div class="rc-button"><button class="js-schedule-button rc-expand-button shown" style="display: block;">Show full schedule</button></div>
